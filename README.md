@@ -1,11 +1,11 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/satitech-official/Sanskriti-Mall-Premium-Ecommerce/main/public/og.png" alt="Sanskriti Mall premium ecommerce website preview" width="100%" />
+<!-- <img src="https://raw.githubusercontent.com/satitech-official/Sanskriti-Mall-Premium-Ecommerce/main/public/og.png" alt="Sanskriti Mall premium ecommerce website preview" width="100%" /> -->
 
 <br />
 <br />
 
-# Sanskriti Mall
+# Crown & Cavalier
 
 ### Premium Men's Fashion Ecommerce Experience
 
