@@ -13,6 +13,7 @@ const { d1, r2 } = hostingConfig;
 // macOS Seatbelt blocks FSEvents, so Codex previews need polling for HMR.
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
 const isNetlify = process.env.NETLIFY === "true";
+const isVercel = process.env.VERCEL === "1" || process.env.VERCEL === "true";
 
 const localBindingConfig = {
   main: "./worker/index.ts",
@@ -53,7 +54,7 @@ export default defineConfig(async () => {
     plugins: [
       vinext(),
       tailwindcss(),
-      ...(isNetlify
+      ...(isNetlify || isVercel
         ? [nitro()]
         : [
             sites(),
