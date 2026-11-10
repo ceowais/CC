@@ -1,0 +1,7 @@
+[build]
+  # The project lives at the repository root, so no base directory is needed.
+  command = "npm run build"
+  publish = "dist/client"
+
+[build.environment]
+  NODE_VERSION = "22"
