@@ -1,13 +1,13 @@
 import type { Product, StoreSettings } from "./types";
 
 export const storeSettings: StoreSettings = {
-  name: "Sanskriti Mall",
+  name: "Crown & Cavalier",
   phone: "+91 90000 00000",
   whatsapp: "919000000000",
-  email: "hello@sanskritimall.in",
-  address: "Badora, Betul, Madhya Pradesh, India",
+  email: "Crowncavalier@gmail.com",
+  address: "Khilwath Chowmahallah Palace, Hyderabad, India 500002",
   hours: "Mon–Sun · 10:30 AM–9:30 PM",
-  instagram: "@sanskritimall",
+  instagram: "@crowncavalier",
   shippingThreshold: 1999,
 };
 

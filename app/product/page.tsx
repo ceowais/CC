@@ -1,15 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ProductDetails } from "@/components/ProductDetails";
 
 export default function ProductLookupRoute() {
-  const [slug, setSlug] = useState("");
+  const [slug] = useState(() => {
+    if (typeof window === "undefined") {
+      return "";
+    }
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    setSlug(params.get("slug") || "");
-  }, []);
+    return new URLSearchParams(window.location.search).get("slug") || "";
+  });
 
   if (!slug) return null;
   return <ProductDetails slug={slug} />;

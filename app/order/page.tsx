@@ -1,15 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { OrderPage } from "@/components/CustomerPages";
 
 export default function OrderLookupRoute() {
-  const [id, setId] = useState("");
+  const [id] = useState(() => {
+    if (typeof window === "undefined") {
+      return "";
+    }
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    setId(params.get("id") || "");
-  }, []);
+    return new URLSearchParams(window.location.search).get("id") || "";
+  });
 
   if (!id) return null;
   return <OrderPage id={id} />;

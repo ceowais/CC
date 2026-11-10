@@ -4,7 +4,7 @@ import test from "node:test";
 
 const projectRoot = new URL("../", import.meta.url);
 
-test("ships the Sanskriti Mall experience rather than the starter preview", async () => {
+test("ships the Crown & Cavalier experience rather than the starter preview", async () => {
   const [home, layout, packageJson, catalog] = await Promise.all([
     readFile(new URL("app/page.tsx", projectRoot), "utf8"),
     readFile(new URL("app/layout.tsx", projectRoot), "utf8"),
@@ -13,7 +13,7 @@ test("ships the Sanskriti Mall experience rather than the starter preview", asyn
   ]);
 
   assert.match(home, /HomeExperience/);
-  assert.match(layout, /Sanskriti Mall/);
+  assert.match(layout, /Crown & Cavalier/);
   assert.match(layout, /og\.png/);
   assert.doesNotMatch(layout, /codex-preview|SkeletonPreview/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);

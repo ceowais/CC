@@ -7,7 +7,7 @@ import { useStore } from "./StoreProvider";
 import { ProductCard } from "./ProductCard";
 
 const heroSlides = [
-  { image: "/images/campaign/indian-hero.png", alt: "Indian model in a charcoal overshirt", location: "Badora, Betul + Madhya Pradesh", first: "A NEW", second: "WAY", third: "TO ARRIVE.", support: "Fine everyday fashion for men who prefer a quieter kind of confidence." },
+  { image: "/images/campaign/indian-hero.png", alt: "Indian model in a charcoal overshirt", location: "Hyderabad, India", first: "A NEW", second: "WAY", third: "TO ARRIVE.", support: "Fine everyday fashion for men who prefer a quieter kind of confidence." },
   { image: "/images/campaign/hero-sun-face.png", alt: "Indian fashion model in warm sunlight", location: "Cotton Linen / 01", first: "SUN", second: "WARM", third: "LAYERS.", support: "Breathable textures and easy tailoring for days that move with you." },
   { image: "/images/campaign/hero-night-face.png", alt: "Indian fashion model in a midnight blue edit", location: "The after-hours edit", first: "AFTER", second: "DARK", third: "EASY.", support: "Built for plans after office, with no compromise on comfort." },
 ];
@@ -37,18 +37,18 @@ export function HomeExperience() {
       <div className="hero-arch hero-arch-one" aria-hidden="true" /><div className="hero-arch hero-arch-two" aria-hidden="true" />
       <div className="hero-grid">
         <div className="hero-content hero-content-new">
-          <div className="hero-kicker"><span /> THE SANSKRITI EDIT / 2026</div>
+          <div className="hero-kicker"><span /> THE CROWN &amp; CAVALIER EDIT / 2026</div>
           <p className="hero-location">{activeHeroSlide.location}</p>
           <h1 key={activeHeroSlide.image}><span className="hero-title-quiet">{activeHeroSlide.first}</span><span>{activeHeroSlide.second}</span><i>{activeHeroSlide.third}</i></h1>
           <p key={`${activeHeroSlide.image}-support`} className="hero-support">{activeHeroSlide.support}</p>
           <div className="hero-ctas"><Link href="/shop" className="button button-light hero-primary-cta">Shop the edit <span>→</span></Link><Link href="/shop?sort=newest" className="button button-ghost-light">New arrivals <span>↗</span></Link></div>
-          <div className="hero-proof"><p><b>4.9 / 5</b><span>Trusted by Betul</span></p><p><b>7 days</b><span>Easy exchanges</span></p><p><b>11 AM</b><span>Doors open daily</span></p></div>
+          <div className="hero-proof"><p><b>4.9 / 5</b><span>Trusted in Hyderabad</span></p><p><b>7 days</b><span>Easy exchanges</span></p><p><b>11 AM</b><span>Doors open daily</span></p></div>
         </div>
         <aside className="hero-edition" aria-label="Campaign detail"><p className="eyebrow light">Edition no.</p><strong>0{heroSlide + 1}</strong><span className="edition-rule" /><p>A NEW LOOK<br />EVERY FEW SECONDS.</p><div className="hero-slide-dots" aria-label="Choose a campaign slide">{heroSlides.map((slide, index) => <button key={slide.image} className={heroSlide === index ? "active" : ""} onClick={() => setHeroSlide(index)} aria-label={`Show slide ${index + 1}`} aria-pressed={heroSlide === index}><i /></button>)}</div><Link href="/collections">Explore the story <span>↗</span></Link></aside>
       </div>
       <div className="hero-bottomline"><span>SM / BETUL</span><div className="hero-status"><i /> IN STORE NOW</div><a className="hero-scroll" href="#new-arrivals"><span /> Scroll to discover</a></div>
     </section>
-    <div className="marquee" aria-label="Sanskriti Mall premium men’s fashion"><div>SANSKRITI MALL <b>✦</b> PREMIUM MEN’S FASHION <b>✦</b> QUALITY <i>·</i> STYLE <i>·</i> VALUE <b>✦</b> SANSKRITI MALL <b>✦</b> PREMIUM MEN’S FASHION <b>✦</b></div></div>
+    <div className="marquee" aria-label="Crown & Cavalier premium men’s fashion"><div>CROWN &amp; CAVALIER <b>✦</b> PREMIUM MEN’S FASHION <b>✦</b> QUALITY <i>·</i> STYLE <i>·</i> VALUE <b>✦</b> CROWN &amp; CAVALIER <b>✦</b> PREMIUM MEN’S FASHION <b>✦</b></div></div>
 
     <section id="new-arrivals" className="section products-section" data-reveal><div className="section-heading"><div><p className="eyebrow">Just in</p><h2>NEW<br />ARRIVALS</h2></div><div className="section-intro"><p>Fresh styles. New season. Your next favourite look.</p><Link className="text-link" href="/shop?sort=newest">View all products →</Link></div></div><div className="product-grid">{newArrivals.map((product) => <ProductCard key={product.id} product={product} />)}</div></section>
 
@@ -64,7 +64,7 @@ export function HomeExperience() {
 
     <section className="style-finder"><div><p className="eyebrow light">A better shortcut</p><h2>WHAT’S<br /><i>YOUR STYLE?</i></h2><p>Answer two quick questions. Meet your most useful edit.</p></div><div className="finder-questions"><fieldset><legend>01 / What’s the occasion?</legend><div>{["Office", "Casual", "Party", "Festive", "Date"].map((choice) => <button className={occasion === choice ? "selected" : ""} key={choice} onClick={() => setOccasion(choice)}>{choice}</button>)}</div></fieldset><fieldset><legend>02 / How do you like your fit?</legend><div>{["Slim", "Regular", "Relaxed"].map((choice) => <button className={fit === choice ? "selected" : ""} key={choice} onClick={() => setFit(choice)}>{choice}</button>)}</div></fieldset><div className="finder-result"><p className="eyebrow">Your style</p>{recommendations.length ? <><h3>{occasion} / {fit}</h3><p>{recommendations.map((product) => product.name).join(" · ")}</p><Link href={`/shop?occasion=${occasion}`} className="text-link light">See your edit →</Link></> : <p>Try another fit or occasion to unlock your edit.</p>}</div></div></section>
 
-    <section className="campaign-section"><div><p className="eyebrow">Store exclusive</p><h2>WEEKEND<br /><i>STYLE DROP.</i></h2><p>Buy any two pieces from the latest edit and get up to 15% off at the store. Ask our team to help build the pair.</p><a className="button button-dark" target="_blank" rel="noreferrer" href={`https://wa.me/${settings.whatsapp}?text=${encodeURIComponent("Hi Sanskriti Mall, I’m interested in the Weekend Style Drop.")}`}>Ask on WhatsApp <span>→</span></a></div><img src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?auto=format&fit=crop&w=1200&q=85" alt="Men’s olive smart casual style" /></section>
+    <section className="campaign-section"><div><p className="eyebrow">Store exclusive</p><h2>WEEKEND<br /><i>STYLE DROP.</i></h2><p>Buy any two pieces from the latest edit and get up to 15% off at the store. Ask our team to help build the pair.</p><a className="button button-dark" target="_blank" rel="noreferrer" href={`https://wa.me/${settings.whatsapp}?text=${encodeURIComponent("Hi Crown & Cavalier, I’m interested in the Weekend Style Drop.")}`}>Ask on WhatsApp <span>→</span></a></div><img src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?auto=format&fit=crop&w=1200&q=85" alt="Men’s olive smart casual style" /></section>
 
     <section className="section social-section"><div className="section-heading"><div><p className="eyebrow">The local style file</p><h2>STYLE ON<br /><i>INSTAGRAM.</i></h2></div><a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-link">Follow {settings.instagram} →</a></div><div className="social-grid">{products.slice(0, 6).map((product, index) => <a key={product.id} href="https://instagram.com" target="_blank" rel="noreferrer" className={`social-shot social-${index + 1}`}><img src={product.image} alt={product.name} /><span>↗</span></a>)}</div></section>
 

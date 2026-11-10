@@ -1,15 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AdminPanel } from "@/components/AdminPanel";
 
 export default function AdminSectionRoute() {
-  const [section, setSection] = useState("dashboard");
+  const [section] = useState(() => {
+    if (typeof window === "undefined") {
+      return "dashboard";
+    }
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    setSection(params.get("section") || "dashboard");
-  }, []);
+    return new URLSearchParams(window.location.search).get("section") || "dashboard";
+  });
 
   return <AdminPanel section={section} />;
 }
