@@ -40,3 +40,6 @@ yarn-error.log*
 /work/
 *.tsbuildinfo
 local-dev.log
+
+# Local Netlify folder
+.netlify
